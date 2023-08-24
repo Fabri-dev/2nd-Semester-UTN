@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1692338294 source:c:\users\usuario\desktop\tp1_prograll\main.c
+	<stdio.h>
+	<stdlib.h>
+	"time.h"
+
+1692338296 source:g:\facu\c\2do cuatrimestre\tp1_prograll\main.c
+	<stdio.h>
+	<stdlib.h>
+	"time.h"
+
