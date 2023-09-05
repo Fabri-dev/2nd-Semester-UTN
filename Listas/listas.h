@@ -34,5 +34,8 @@ void mostrarLista(nodo*cabeza);
 nodo*ArchivoToListaOrdenado(nodo*cabeza,char archivo[]);
 nodo*ordenarMenoraMayor(nodo*cabeza,nodo*nuevoNodo);
 int buscarPersonaLista(nodo*cabeza,stPersona busqueda);
+nodo*intercalarListasXedad(nodo*lista1,nodo*lista2);
+nodo*cargarLista(nodo*cabeza);
+nodo*invertirElementosLista(nodo*cabeza);
 
 #endif // LISTAS_H_INCLUDED

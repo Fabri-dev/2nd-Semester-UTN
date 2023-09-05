@@ -1,14 +1,27 @@
 # depslib dependency file v1.0
-1693612385 source:g:\facu\c\2do cuatrimestre\listas\listas.c
+1693942814 source:g:\facu\c\2do cuatrimestre\listas\listas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"listas.h"
 
-1693612167 source:g:\facu\c\2do cuatrimestre\listas\main.c
+1693939966 source:g:\facu\c\2do cuatrimestre\listas\main.c
 	<stdio.h>
 	<stdlib.h>
 	"listas.h"
 
-1693612167 g:\facu\c\2do cuatrimestre\listas\listas.h
+1693854528 g:\facu\c\2do cuatrimestre\listas\listas.h
+
+1693854527 source:c:\users\usuario\desktop\2nd-semester-utn-main\listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listas.h"
+
+1693854527 c:\users\usuario\desktop\2nd-semester-utn-main\listas\listas.h
+
+1693855259 source:c:\users\usuario\desktop\2nd-semester-utn-main\listas\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
 

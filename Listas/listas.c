@@ -164,6 +164,27 @@ void mostrarLista(nodo*cabeza)
     }
 }
 
+
+nodo*cargarLista(nodo*cabeza)
+{
+    char op;
+    do
+    {
+        cabeza=agregarNuevoNodoAlFinal(cabeza,crearNodo(crearPersona()));
+
+        printf("Desea seguir cargando nodos a la lista? s/n: ");
+        fflush(stdin);
+        scanf("%c",&op);
+
+
+    }while(op=='s'||op=='S');
+
+
+    return cabeza;
+}
+
+
+
 //2. Hacer un programa que lea de un archivo datos y los inserte en una lista en forma ordenada.
 
 nodo*ArchivoToListaOrdenado(nodo*cabeza,char archivo[])
@@ -195,12 +216,12 @@ nodo*ordenarMenoraMayor(nodo*cabeza,nodo*nuevoNodo)
 {
     if(cabeza == NULL)
     {
-         cabeza = nuevoNodo;
+        cabeza = nuevoNodo;
     }
     else if(nuevoNodo->dato.edad < cabeza->dato.edad)
     {
 
-            cabeza=agregarNuevoNodoAlPpio(cabeza,nuevoNodo);
+        cabeza=agregarNuevoNodoAlPpio(cabeza,nuevoNodo);
 
     }
     else
@@ -208,16 +229,16 @@ nodo*ordenarMenoraMayor(nodo*cabeza,nodo*nuevoNodo)
         nodo*seg=cabeza->siguiente;
         nodo*antes=cabeza;
 
-            while(seg != NULL && nuevoNodo->dato.edad>seg->dato.edad)
-            {
-                antes=seg;
-                seg=seg->siguiente;
-            }
-            antes->siguiente=nuevoNodo;
-            if(seg != NULL)
-            {
-                nuevoNodo->siguiente=seg;
-            }
+        while(seg != NULL && nuevoNodo->dato.edad > seg->dato.edad)
+        {
+            antes=seg;
+            seg=seg->siguiente;
+        }
+        antes->siguiente=nuevoNodo;
+        if(seg != NULL)
+        {
+            nuevoNodo->siguiente=seg;
+        }
 
 
 
@@ -245,10 +266,7 @@ int buscarPersonaLista(nodo*cabeza,stPersona busqueda)
         }
 
     }
-    else
-    {
-        flag=0;
-    }
+
 
 
 
@@ -256,8 +274,58 @@ int buscarPersonaLista(nodo*cabeza,stPersona busqueda)
 }
 //Hacer una función que intercale en orden los elementos de dos listas ordenadas generando una nueva lista. Se deben redireccionar los punteros, no se deben crear nuevos nodos.
 
+nodo*intercalarListasXedad(nodo*lista1,nodo*lista2)
+{
+    nodo*listaIntercalada=inicLista();
+    nodo*aux;
 
 
+    while(lista1 != NULL && lista2 != NULL)
+    {
+        if(lista1->dato.edad < lista2->dato.edad)
+        {
+            aux=lista1;
+            lista1=lista1->siguiente;
+        }
+        else
+        {
+            aux=lista2;
+            lista2=lista2->siguiente;
+        }
+
+        aux->siguiente=NULL;
+        listaIntercalada=agregarNuevoNodoAlFinal(listaIntercalada,aux);
+
+    }
 
 
+    listaIntercalada=agregarNuevoNodoAlFinal(listaIntercalada,(lista1? lista1:lista2));
+
+    return listaIntercalada;
+}
+
+//Invertir los elementos de una lista redireccionando solamente los punteros. (No se deben crear nuevos nodos)
+nodo*invertirElementosLista(nodo*cabeza)
+{
+    nodo*invertido=inicLista();
+    nodo*aux;
+    if(cabeza != NULL)
+    {
+
+        while(cabeza != NULL)
+        {
+            aux=cabeza;
+            cabeza=cabeza->siguiente;
+            aux->siguiente=NULL;
+            invertido= agregarNuevoNodoAlPpio(invertido,aux);
+        }
+    }
+    else
+    {
+        puts("La lista esta vacia");
+    }
+
+
+    return invertido;
+}
 
