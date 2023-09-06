@@ -329,3 +329,49 @@ nodo*invertirElementosLista(nodo*cabeza)
     return invertido;
 }
 
+
+nodo*borrarNodoXNombre(nodo*cabeza,char nombre[])
+{
+    if(cabeza != NULL)
+    {
+        nodo*aux=cabeza; //creo la anterior desde el principio (que la llamo aux)
+        if(strcmpi(cabeza->dato.nombre,nombre)==0)// si esta al principio cambio la cabeza nada mas
+        {
+            aux=cabeza;
+            cabeza=cabeza->siguiente;
+            aux->siguiente=NULL;
+            free(aux);
+        }
+        else // si esta en el medio o final
+        {
+            nodo*seg=cabeza->siguiente; //creo la seguidora
+            while(seg->siguiente != NULL && strcmpi(cabeza->dato.nombre,nombre)!=0)//me muevo hasta que encuentre el nombre
+            {
+                aux=seg;
+                seg=seg->siguiente;
+            }
+
+            //ahora tengo que ver los casos del por que se corto el while
+
+            if(strcmpi(cabeza->dato.nombre,nombre)==0) // si se corto porque encontre el nombre
+            {
+
+                aux->siguiente=seg->siguiente;
+                free(seg);
+            }
+            else //o porque no lo encontre (basicamente seg->siguiente es NULL)
+            {
+                puts("No se encontro el nombre");
+            }
+
+        }
+    }
+    else
+    {
+        puts("La lista esta vacia");
+    }
+
+
+    return cabeza;
+
+}

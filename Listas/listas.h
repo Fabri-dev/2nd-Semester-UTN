@@ -37,5 +37,6 @@ int buscarPersonaLista(nodo*cabeza,stPersona busqueda);
 nodo*intercalarListasXedad(nodo*lista1,nodo*lista2);
 nodo*cargarLista(nodo*cabeza);
 nodo*invertirElementosLista(nodo*cabeza);
+nodo*borrarNodoXNombre(nodo*cabeza,char nombre[]);
 
 #endif // LISTAS_H_INCLUDED

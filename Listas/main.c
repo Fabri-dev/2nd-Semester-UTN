@@ -24,6 +24,8 @@ int main()
 //
 //    lista1=cargarLista(lista1);
 //    mostrarLista(lista1);
+//    lista1=borrarNodoXNombre(lista1,"cgsdfgerger");
+//    mostrarLista(lista1);
 //
 //    lista2=cargarLista(lista2);
 //    mostrarLista(lista2);
