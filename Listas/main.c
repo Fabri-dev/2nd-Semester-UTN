@@ -32,11 +32,13 @@ int main()
 //    lista3=intercalarListasXedad(lista1,lista2);
 //    mostrarLista(lista3);
 
-    nodo*lista1=inicLista();
-    nodo*listaInvertida=inicLista();
-    //lista1=cargarLista(lista1);
-    mostrarLista(lista1);
-    listaInvertida=invertirElementosLista(lista1);
-    mostrarLista(listaInvertida);
+//    nodo*lista1=inicLista();
+//    nodo*listaInvertida=inicLista();
+//    lista1=cargarLista(lista1);
+//    mostrarLista(lista1);
+//    listaInvertida=invertirElementosLista(lista1);
+//    mostrarLista(listaInvertida);
+
+
     return 0;
 }
