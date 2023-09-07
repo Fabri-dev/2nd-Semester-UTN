@@ -32,4 +32,6 @@ nodo2* agregarEnOrdenXedad(nodo2* lista,nodo2* nuevoNodo);
 void mostrarLista(nodo2*lista);
 nodo2* cargarListaDoble(nodo2*lista);
 
+int devolverCapicua (nodo2* lista,nodo2* ulti);
+ nodo2* eliminarNodoDelMedio(nodo2 * lista);
 #endif // LISTAS2_H_INCLUDED

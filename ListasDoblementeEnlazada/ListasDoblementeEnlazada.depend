@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1694013173 source:c:\users\usuario\desktop\listasdoblementeenlazada\main.c
+1694092540 source:c:\users\usuario\desktop\listasdoblementeenlazada\main.c
 	<stdio.h>
 	<stdlib.h>
 	"listas2.h"
 
-1694013942 source:c:\users\usuario\desktop\listasdoblementeenlazada\listas2.c
+1694092433 source:c:\users\usuario\desktop\listasdoblementeenlazada\listas2.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"listas2.h"
 
-1694013114 c:\users\usuario\desktop\listasdoblementeenlazada\listas2.h
+1694091818 c:\users\usuario\desktop\listasdoblementeenlazada\listas2.h
 

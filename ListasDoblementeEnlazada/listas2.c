@@ -59,10 +59,10 @@ nodo2*agregarAlFinal(nodo2 *lista,nodo2*nuevoNodo)
     else
     {
         nodo2 * ulti = buscarUltimoNodo(lista);
-        printf("\nUltimo buscado\n");
+
         ulti->sig = nuevoNodo;
         nuevoNodo->ant = ulti;
-        printf("Enlazado");
+
     }
 
     return lista;
@@ -70,8 +70,8 @@ nodo2*agregarAlFinal(nodo2 *lista,nodo2*nuevoNodo)
 
 nodo2* buscarUltimoNodo(nodo2* lista)
 {
-        while(lista!=NULL&&lista->sig !=NULL)
-            lista = lista->sig;
+    while(lista!=NULL&&lista->sig !=NULL)
+        lista = lista->sig;
 
     return lista;
 }
@@ -148,26 +148,6 @@ nodo2* cargarListaDoble(nodo2*lista)
 }
 
 
-int verificarSiExisteNombre(nodo2*lista,char nombre[])
-{
-    int flag=0;
-    while(lista != NULL && flag==0)
-    {
-        lista=lista->sig;
-        if(strcmpi(lista->dato.nombre,nombre)==0)
-        {
-            flag=1;
-        }
-    }
-
-    if(flag == 0 )
-    {
-        puts("El nombre buscado no existe en la lista");
-    }
-
-    return flag;
-}
-
 nodo2* borrarNodo(nodo2*lista, char nombre[])
 {
     if(lista == NULL)
@@ -178,28 +158,29 @@ nodo2* borrarNodo(nodo2*lista, char nombre[])
     {
         nodo2*antes=lista;
         nodo2*seg=lista->sig;
+        nodo2*siguienteDeSeg = seg->sig;
         if(strcmpi(lista->dato.nombre,nombre)==0)
         {
+            if(lista->sig !=NULL){
             lista=seg;
-            if(lista!= NULL)
-            {
-                lista->ant=NULL;
-            }
+            lista->ant=NULL;
             free(antes);
-
+        }
         }
         else
         {
-            while(seg != NULL && strcmpi(lista->dato.nombre,nombre)!=0)
+            while(seg != NULL && strcmpi(seg->dato.nombre,nombre)!=0)
             {
                 antes=seg;
                 seg=seg->sig;
+                siguienteDeSeg = seg->sig;
+
             }
 
             if(seg != NULL)
             {
                 antes->sig=seg->sig;
-                seg->ant=antes;
+                siguienteDeSeg->ant = antes;
                 free(seg);
             }
             else
@@ -213,5 +194,55 @@ nodo2* borrarNodo(nodo2*lista, char nombre[])
 
     return lista;
 }
+
+///Crear una función recursiva que determine si una lista doblemente vinculada es capicúa.
+///(Después de ver recursividad - si no, hacer iterativo, NO usar contador)
+
+int devolverCapicua (nodo2* lista,nodo2* ulti)
+{
+
+    int flag = 1;
+
+    if(lista!= ulti && lista->sig != ulti)
+    {
+        if(lista->dato.edad == ulti->dato.edad )
+        {
+            flag = devolverCapicua(lista->sig,ulti->ant);
+        }
+        else
+        {
+            flag =0;
+        }
+    }
+
+
+    return flag;
+}
+
+/**Dada una lista doblemente enlazada ordenada de enteros,
+eliminar el  nodo que se encuentra en el punto medio de la lista, si la cantidad de nodos es par,
+ eliminar el inmediatamente superior.*/
+
+
+nodo2* eliminarNodoDelMedio(nodo2 * lista)
+{
+
+    if(lista !=NULL)
+    {
+        nodo2* seg = lista;
+        nodo2*ulti=buscarUltimoNodo(lista);
+        while(seg!= ulti && seg->sig != ulti)
+        {
+            seg=seg->sig;
+            ulti=ulti->ant;
+        }
+        lista=borrarNodo(lista,ulti->dato.nombre);
+    }
+    return lista;
+}
+
+
+
+
 
 
