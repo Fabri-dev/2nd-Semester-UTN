@@ -278,7 +278,7 @@ nodo*intercalarListasXedad(nodo*lista1,nodo*lista2)
 {
     nodo*listaIntercalada=inicLista();
     nodo*aux;
-
+    nodo*ante=listaIntercalada;
 
     while(lista1 != NULL && lista2 != NULL)
     {
@@ -294,6 +294,8 @@ nodo*intercalarListasXedad(nodo*lista1,nodo*lista2)
         }
 
         aux->siguiente=NULL;
+
+
         listaIntercalada=agregarNuevoNodoAlFinal(listaIntercalada,aux);
 
     }
@@ -375,3 +377,40 @@ nodo*borrarNodoXNombre(nodo*cabeza,char nombre[])
     return cabeza;
 
 }
+
+
+//pilas
+
+
+// mi pensamiento sobre como crear la libreria de pilas es basicamente que ya creo todos los nodos, solo me falta ponerle datos,
+// y llevo una cuenta de todos los datos que tengo(como los validos) con postope, pero tranquilamente se pueden utilizar nodos si quiero.
+
+
+Pila*inicPila()
+{
+    return NULL;
+}
+
+Pila*crearPila(int num)
+{
+    Pila*pilita=(Pila*)malloc(sizeof(Pila));
+    pilita->siguiente=NULL;
+    pilita->dato=num;
+
+
+    return pilita;
+}
+
+Pila*apilar(Pila*aux,int dato)
+{
+    Pila*nuevaPilita=crearPila(dato);
+
+    if(aux != NULL)
+    {
+    nuevaPilita->siguiente=aux;
+    }
+    aux=nuevaPilita;
+
+    return aux;
+}
+

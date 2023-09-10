@@ -16,6 +16,15 @@ typedef struct{
 
 }nodo;
 
+typedef struct{
+
+    int dato;
+    struct pila*siguiente;
+
+}Pila;
+
+
+
 //funciones archivo
 
 stPersona crearPersona();
