@@ -19,18 +19,18 @@ int main()
 //    buscarPersonaLista(cabeza,aux)?printf("Persona encontrada") : printf("Error persona no encontrada");
 
     nodo*lista1=inicLista();
-    nodo*lista2=inicLista();
-    nodo*lista3=inicLista();
-
+//    nodo*lista2=inicLista();
+//    nodo*lista3=inicLista();
+//
     lista1=cargarLista(lista1);
-    mostrarLista(lista1);
-
-    lista2=cargarLista(lista2);
-    mostrarLista(lista2);
-
-
-    lista3=intercalarListasXedad(lista1,lista2);
-    mostrarLista(lista3);
+//    mostrarLista(lista1);
+//
+//    lista2=cargarLista(lista2);
+//    mostrarLista(lista2);
+//
+//
+//    lista3=intercalarListasXedad(lista1,lista2);
+//    mostrarLista(lista3);
 
 //    lista1=borrarNodoXNombre(lista1,"cgsdfgerger");
 //    mostrarLista(lista1);
@@ -42,6 +42,14 @@ int main()
 //    listaInvertida=invertirElementosLista(lista1);
 //    mostrarLista(listaInvertida);
 
+    //mostrarListaInvertidaRecursiva(lista1);
+    //int rta=sumarElementosListaRecursivo(lista1);
+    //printf("rta: %i",rta);
 
+//mostrarPares(lista1);
+
+lista1 = borrarNodoRecursivo(lista1,"leo");
+
+mostrarLista(lista1);
     return 0;
 }

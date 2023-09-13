@@ -151,6 +151,15 @@ nodo*agregarNuevoNodoAlPpio(nodo*cabeza,nodo*nuevoNodo)
     return cabeza;
 }
 
+void borrarNodoPrimero (nodo** lista)
+{
+    if (*lista)
+    {
+        nodo* aux=*lista;
+        *lista=(*lista)->siguiente;
+        free(aux);
+    }
+}
 void mostrarLista(nodo*cabeza)
 {
     int i=0;
@@ -177,7 +186,8 @@ nodo*cargarLista(nodo*cabeza)
         scanf("%c",&op);
 
 
-    }while(op=='s'||op=='S');
+    }
+    while(op=='s'||op=='S');
 
 
     return cabeza;
@@ -378,39 +388,66 @@ nodo*borrarNodoXNombre(nodo*cabeza,char nombre[])
 
 }
 
-
-//pilas
-
-
-// mi pensamiento sobre como crear la libreria de pilas es basicamente que ya creo todos los nodos, solo me falta ponerle datos,
-// y llevo una cuenta de todos los datos que tengo(como los validos) con postope, pero tranquilamente se pueden utilizar nodos si quiero.
-
-
-Pila*inicPila()
+stPersona retornarUltimaPersonaLista(nodo*lista)
 {
-    return NULL;
+    while(lista->siguiente != NULL)
+    {
+        lista=lista->siguiente;
+    }
+
+    return lista->dato;
 }
 
-Pila*crearPila(int num)
+void mostrarListaInvertidaRecursiva(nodo*aux)
 {
-    Pila*pilita=(Pila*)malloc(sizeof(Pila));
-    pilita->siguiente=NULL;
-    pilita->dato=num;
-
-
-    return pilita;
-}
-
-Pila*apilar(Pila*aux,int dato)
-{
-    Pila*nuevaPilita=crearPila(dato);
-
     if(aux != NULL)
     {
-    nuevaPilita->siguiente=aux;
+        mostrarListaInvertidaRecursiva(aux->siguiente);
+        mostrarPersona(aux->dato);
     }
-    aux=nuevaPilita;
 
-    return aux;
 }
 
+int sumarElementosListaRecursivo(nodo*aux)
+{
+    return (aux)?aux->dato.edad+=sumarElementosListaRecursivo(aux->siguiente):0;
+
+
+}
+
+void mostrarPares(nodo * lista){
+
+if(lista != NULL){
+
+    mostrarPersona(lista->dato);
+   lista = lista->siguiente;
+   if(lista !=NULL){
+    mostrarPares(lista->siguiente);
+   }
+
+}
+
+}
+
+nodo * borrarNodoRecursivo(nodo* lista,char nombreAux[]){
+
+
+
+    if(lista != NULL && strcmpi(lista->dato.nombre,nombreAux)!= 0){
+
+        lista->siguiente = borrarNodoRecursivo(lista->siguiente,nombreAux);
+
+    }
+    else
+    {
+        if(lista != NULL)
+        {
+            nodo * aux = lista;
+            lista=lista->siguiente;
+            free(aux);
+        }
+    }
+
+
+return lista;
+}

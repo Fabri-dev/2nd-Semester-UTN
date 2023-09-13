@@ -17,10 +17,7 @@ typedef struct{
 }nodo;
 
 typedef struct{
-
-    int dato;
-    struct pila*siguiente;
-
+    struct nodo*lista;
 }Pila;
 
 
@@ -47,5 +44,16 @@ nodo*intercalarListasXedad(nodo*lista1,nodo*lista2);
 nodo*cargarLista(nodo*cabeza);
 nodo*invertirElementosLista(nodo*cabeza);
 nodo*borrarNodoXNombre(nodo*cabeza,char nombre[]);
+void borrarNodoPrimero (nodo** lista);
+
+//recursividad
+///1. Recorrer una lista y mostrarla en forma invertida.
+void mostrarListaInvertidaRecursiva(nodo*aux);
+///2. Sumar los elementos de una lista.
+int sumarElementosListaRecursivo(nodo*aux);
+///3. Mostrar los elementos de una lista ubicados en una posición par.
+void mostrarPares(nodo * lista);
+///4. Borrar un nodo de una lista simple (buscado por un dato específico).
+nodo * borrarNodoRecursivo(nodo* lista,char nombreAux[]);
 
 #endif // LISTAS_H_INCLUDED
