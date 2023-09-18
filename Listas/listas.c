@@ -451,3 +451,47 @@ nodo * borrarNodoRecursivo(nodo* lista,char nombreAux[]){
 
 return lista;
 }
+
+nodo * insertarNodoRecursivo(nodo*lista,nodo*nuevoNodo)
+{
+    if(lista != NULL)
+    {
+        if(lista->dato.edad < nuevoNodo->dato.edad)
+        {
+            lista->siguiente=insertarNodoRecursivo(lista->siguiente,nuevoNodo);
+        }
+        else
+        {
+            nodo*aux=lista;
+            lista=nuevoNodo;
+            nuevoNodo->siguiente=aux;
+        }
+    }
+    else
+    {
+        lista=nuevoNodo;
+    }
+
+
+    return lista;
+}
+nodo *invertirListaRecursivo(nodo*lista)
+{
+    if(lista != NULL)
+    {
+        nodo*aux=lista; // me guardo el elemento antes
+
+        lista=invertirListaRecursivo(lista->siguiente); // y me muevo para adelante
+
+        //Una vez que la lista termina, va a retornar NULL ya que estaremos parados en el final de la lista
+        //y ahora vamos en reversa, por eso nos guardamos los nodos en un auxiliar antes
+
+        aux->siguiente=NULL;//pero debemos cortar los enlaces
+
+        lista=agregarNuevoNodoAlFinal(lista,aux);//agregamos al final porque si agregamos al principio la lista queda igual, hay que pensar que estamos yendo en reversa
+    }
+
+
+    return lista;
+}
+

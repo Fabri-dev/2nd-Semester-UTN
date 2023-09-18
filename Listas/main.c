@@ -48,8 +48,15 @@ int main()
 
 //mostrarPares(lista1);
 
-lista1 = borrarNodoRecursivo(lista1,"leo");
+//lista1 = borrarNodoRecursivo(lista1,"leo");
 
-mostrarLista(lista1);
+//mostrarLista(lista1);
+
+//    lista1=insertarNodoRecursivo(lista1,crearNodo(crearPersona()));
+//    mostrarLista(lista1);
+
+
+    lista1=invertirListaRecursivo(lista1);
+    mostrarLista(lista1);
     return 0;
 }

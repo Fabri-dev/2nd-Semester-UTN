@@ -55,5 +55,8 @@ int sumarElementosListaRecursivo(nodo*aux);
 void mostrarPares(nodo * lista);
 ///4. Borrar un nodo de una lista simple (buscado por un dato específico).
 nodo * borrarNodoRecursivo(nodo* lista,char nombreAux[]);
-
+///5. Insertar un nodo o dato en una lista simplemente enlazada en forma recursiva (manteniendo el orden de forma creciente).
+nodo * insertarNodoRecursivo(nodo*lista,nodo*nuevoNodo);
+///  6. Invertir una lista simple cambiando los vínculos.
+nodo *invertirListaRecursivo(nodo*lista);
 #endif // LISTAS_H_INCLUDED
