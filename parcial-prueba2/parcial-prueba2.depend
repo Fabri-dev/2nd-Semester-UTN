@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1695216803 source:c:\users\usuario\desktop\parcial-prueba2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"clientes.h"
+
+1695223917 c:\users\usuario\desktop\parcial-prueba2\funciones.h
+
+1695224374 source:c:\users\usuario\desktop\parcial-prueba2\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"clientes.h"
+
+1695224280 source:c:\users\usuario\desktop\parcial-prueba2\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"funciones.h"
+
+1695223687 c:\users\usuario\desktop\parcial-prueba2\clientes.h
+	"funciones.h"
+
