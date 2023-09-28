@@ -123,7 +123,55 @@ float calcularTotalVendido(nodoCliente*listaD)
     return total;
 }
 
-nodoCliente*borrarNodoListaD(nodoCliente*listaD)
+nodoCliente*cargarFilaClientes(nodoCliente*fila,nodoConsola*listaSimple)
 {
+    char op;
+    do
+    {
+        stCliente aux=crearClienteExceptoCompra();
+        fila=comprarConsola(fila,listaSimple,aux.Nombre,aux.mediodepago);
+        printf("Desea seguir cargando clientes a la fila? s/n");
+        fflush(stdin);
+        scanf("%c",&op);
 
+    }while(op=='s'||op=='S');
+
+    return fila;
+}
+
+nodoCliente* borrarNodoPrimerCliente(nodoCliente*listaD)
+{
+    nodoCliente*nuevaListaD;
+    if(listaD != NULL)
+    {
+        nodoCliente*aux=listaD;
+        if(listaD->siguiente != NULL)
+        {
+            listaD=listaD->siguiente;
+            listaD->anterior=NULL;
+
+
+            aux->siguiente=NULL;
+        }
+        free(aux);
+    }
+    else
+    {
+        puts("Lista Vacia");
+    }
+    return nuevaListaD;
+}
+
+nodoCliente*atender(nodoCliente*fila)
+{
+    if(fila != NULL)
+    {
+        borrarNodoPrimerCliente(fila);
+        puts("Se atendio un cliente !!\n");
+    }
+    else
+    {
+        puts("Fila vacia !");
+    }
+    return fila;
 }

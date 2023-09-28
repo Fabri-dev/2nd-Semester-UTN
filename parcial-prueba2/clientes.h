@@ -12,6 +12,9 @@ void mostrarListaClientes(nodoCliente*listaD);
 nodoCliente*comprarConsola(nodoCliente*listaDoble,nodoConsola*lista,char nombreCliente[],int medioPago);
 nodoCliente*agregarAlFinal(nodoCliente*listaD,nodoCliente*nuevoNodo);
 nodoCliente*retornarUltimoNodoCliente(nodoCliente*listaD);
+nodoCliente*cargarFilaClientes(nodoCliente*fila,nodoConsola*listaSimple);
+nodoCliente* borrarNodoPrimerCliente(nodoCliente*listaD);
+nodoCliente*atender(nodoCliente*fila);
 
 
 

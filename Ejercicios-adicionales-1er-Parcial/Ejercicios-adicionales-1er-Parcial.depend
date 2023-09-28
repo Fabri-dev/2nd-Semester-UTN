@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1695826199 source:c:\users\usuario\desktop\ejercicios-adicionales-1er-parcial\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
+
+1695826174 source:c:\users\usuario\desktop\ejercicios-adicionales-1er-parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695824281 source:c:\users\usuario\desktop\ejercicios-adicionales-1er-parcial\funciones.c
+	"listas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695826174 c:\users\usuario\desktop\ejercicios-adicionales-1er-parcial\listas.h
+
+1695824281 c:\users\usuario\desktop\ejercicios-adicionales-1er-parcial\funciones.h
+	"listas.h"
+
+1695855844 source:c:\users\fabri\desktop\ejercicios-adicionales-1er-parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695858640 c:\users\fabri\desktop\ejercicios-adicionales-1er-parcial\funciones.h
+	"listas.h"
+
+1695864114 c:\users\fabri\desktop\ejercicios-adicionales-1er-parcial\listas.h
+
+1695864114 source:c:\users\fabri\desktop\ejercicios-adicionales-1er-parcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695864007 source:c:\users\fabri\desktop\ejercicios-adicionales-1er-parcial\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
+

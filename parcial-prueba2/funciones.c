@@ -64,8 +64,25 @@ void menu()
 
             break;
         case 7:
+            listaConsola= agregarOrdenadoXStock(listaConsola,crearNodoConsola(crearConsola()));
+            //listaConsola= agregarOrdenadoXStock(listaConsola,crearNodoConsola(crearConsola()));
+           // listaConsola= agregarOrdenadoXStock(listaConsola,crearNodoConsola(crearConsola()));
+
+            system("cls");
+
+            listaCliente= cargarFilaClientes(listaCliente,listaConsola);
+
+            mostrarListaClientes(listaCliente);
+
+            listaCliente=atender(listaCliente);
+
+            mostrarListaClientes(listaCliente);
+
             break;
         case 8:
+
+
+
             break;
         default:
             break;

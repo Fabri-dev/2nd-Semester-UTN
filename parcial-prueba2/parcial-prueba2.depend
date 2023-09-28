@@ -25,3 +25,29 @@
 1695223687 c:\users\usuario\desktop\parcial-prueba2\clientes.h
 	"funciones.h"
 
+1695216804 source:g:\facu\c\2do cuatrimestre\parcial-prueba2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"clientes.h"
+
+1695223918 g:\facu\c\2do cuatrimestre\parcial-prueba2\funciones.h
+
+1695842638 g:\facu\c\2do cuatrimestre\parcial-prueba2\clientes.h
+	"funciones.h"
+
+1695842909 source:g:\facu\c\2do cuatrimestre\parcial-prueba2\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"funciones.h"
+
+1695840643 source:g:\facu\c\2do cuatrimestre\parcial-prueba2\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"clientes.h"
+
