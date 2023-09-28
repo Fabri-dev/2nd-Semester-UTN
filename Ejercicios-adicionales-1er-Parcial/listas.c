@@ -249,9 +249,9 @@ nodoD*agregarOrdenadoDoble(nodoD*listaD,nodoD*nuevoNodo)
             antes=seg;
             seg=seg->siguiente;
         }
-            nuevoNodo->siguiente=seg;
-            antes->siguiente=nuevoNodo;
-            nuevoNodo->anterior=antes;
+        nuevoNodo->siguiente=seg;
+        antes->siguiente=nuevoNodo;
+        nuevoNodo->anterior=antes;
         if(seg != NULL)
         {
             seg->anterior=nuevoNodo;
@@ -265,7 +265,7 @@ void mostrarExamen(stExamen dato)
 {
     printf("El dni es: %s \n",dato.dni);
     printf("La asignatura es: %s \n",dato.asignatura);
-    printf("La nota del examen es: %i \n",dato.Nota);
+    printf("La nota del examen es: %.2f \n",dato.Nota);
     printf("El nro de parcial es: %i \n",dato.nroParcial);
     puts("--------------------------------------------------");
 }
@@ -309,14 +309,14 @@ nodoD*eliminarDniEspecificoDoble(nodoD*listaD,char dniEliminar[])
                 else
                 {
 
-                ante->siguiente=seg->siguiente; // conecto al anterior con el siguiente
-                aux->anterior=NULL; // desconecto el anterior del que quiero borrar
+                    ante->siguiente=seg->siguiente; // conecto al anterior con el siguiente
+                    aux->anterior=NULL; // desconecto el anterior del que quiero borrar
 
-                seg=seg->siguiente; // me muevo hacia adelante
-                seg->anterior=ante; // conecto el siguiente del que quiero borrar con el anterior
+                    seg=seg->siguiente; // me muevo hacia adelante
+                    seg->anterior=ante; // conecto el siguiente del que quiero borrar con el anterior
 
 
-                aux->siguiente=NULL; // desconecto el siguiente del que quiero borrar
+                    aux->siguiente=NULL; // desconecto el siguiente del que quiero borrar
                 }
 
                 free(aux);
@@ -353,9 +353,79 @@ float calcularPromedioxDniYAsignaturaDoble(nodoD*listaD,char dniBuscar[], char a
     if(contador != 0)
     {
 
-    prom=(float) sum/contador;
+        prom=(float) sum/contador;
     }
     return prom;
 }
 
+int verificarSiExisteDniEnAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[],char dniBuscar[],int flag)
+{
+    if(flag==0 && strcmpi(listaD->dato.asignatura,asignaturaBuscar)==0 && strcmpi(listaD->dato.dni,dniBuscar)==0)
+    {
+        flag=1;
+    }
+    else
+    {
+        flag=verificarSiExisteDniEnAsignaturaRecursivo(listaD->siguiente,asignaturaBuscar,dniBuscar,flag);
+    }
+    return flag;
+}
 
+void mostrarExamenAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[])
+{
+    if(listaD != NULL && strcmpi(listaD->dato.asignatura,asignaturaBuscar) == 0)
+    {
+        printf("DNI: %s \n",listaD->dato.dni);
+        printf("Nro. parcial: %i \n",listaD->dato.nroParcial);
+        printf("Nota: %.2f \n",listaD->dato.Nota);
+
+        mostrarExamenAsignaturaRecursivo(listaD->siguiente,asignaturaBuscar);
+    }
+    else
+    {
+        puts("Final");
+    }
+}
+
+int contarAlumnosAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[])
+{
+    int rta = 0;
+    if(listaD != NULL)
+    {
+        puts("Entre a distinto de null");
+        if(strcmpi(listaD->dato.asignatura,asignaturaBuscar)==0)
+        {
+            puts("encontre la asignatura");
+
+            listaD=ultimaOcurrenciaDniRecursivo(listaD,listaD->dato.dni);
+            rta=1;
+
+        }
+        rta+=contarAlumnosAsignaturaRecursivo(listaD->siguiente,asignaturaBuscar);
+    }
+    else
+    {
+        puts("lista vacia");
+    }
+
+
+    return rta;
+}
+
+
+nodoD*ultimaOcurrenciaDniRecursivo(nodoD*listaD, char dniBuscar[])
+{
+
+    if(listaD != NULL)
+    {
+        nodoD*proximo = listaD->siguiente;
+
+        if(strcmpi(proximo->dato.dni,listaD->dato.dni) == 0)
+        {
+            listaD=ultimaOcurrenciaDniRecursivo(listaD->siguiente,dniBuscar);
+        }
+
+    }
+
+    return listaD;
+}

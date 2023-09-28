@@ -42,8 +42,10 @@ void mostrarExamen(stExamen dato);
 void mostrarListaDoble(nodoD*listaD);
 nodoD*eliminarDniEspecificoDoble(nodoD*listaD,char dniEliminar[]);
 float calcularPromedioxDniYAsignaturaDoble(nodoD*listaD,char dniBuscar[], char asignaturaBuscar[]);
-
-
+int verificarSiExisteDniEnAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[],char dniBuscar[],int flag);
+void mostrarExamenAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[]);
+int contarAlumnosAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[]);
+nodoD*ultimaOcurrenciaDniRecursivo(nodoD*listaD, char dniBuscar[]);
 
 
 

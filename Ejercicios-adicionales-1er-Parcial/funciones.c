@@ -36,8 +36,8 @@ void menu()
         if(lista3 != NULL)
         {
 
-        puts("\nLISTA 3 (interseccion):");
-        mostrarLista(lista3);
+            puts("\nLISTA 3 (interseccion):");
+            mostrarLista(lista3);
         }
 
         break;
@@ -63,6 +63,7 @@ void inciso(char letra)
 {
     nodoD*listaDoble=iniciarLista();
     float prom=0;
+    int flag=0,cont=0;
     switch(letra)
     {
     case 'b':
@@ -92,23 +93,47 @@ void inciso(char letra)
         {
 
             printf("El promedio es: %.2f",prom);
-        }else
+        }
+        else
         {
             puts("No se encontro alumno");
         }
         break;
     case 'e':
-
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        verificarSiExisteDniEnAsignaturaRecursivo(listaDoble,"progra","5",0)?puts("Se encontro el dato buscado"):puts("Error dato no encontrado");
         break;
     case 'f':
+        puts("Asignatura: progra");
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        mostrarExamenAsignaturaRecursivo(listaDoble,"progra");
+
         break;
     case 'g':
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+
+        mostrarListaDoble(listaDoble);
+
+        cont=contarAlumnosAsignaturaRecursivo(listaDoble,"progra");
+
+        if(cont != 0)
+        {
+            printf("\nEl nro de alumnos de esa asignatura es: %i \n",cont);
+        }
+        else
+        {
+            puts("No hay alumnos de esa asignatura");
+        }
         break;
     default:
         puts("Ingrese un inciso correcto");
         break;
     }
-
-
-
 }
+
+

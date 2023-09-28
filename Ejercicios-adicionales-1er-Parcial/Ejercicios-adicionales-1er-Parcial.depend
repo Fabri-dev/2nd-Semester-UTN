@@ -45,3 +45,26 @@
 	<string.h>
 	"listas.h"
 
+1695906218 source:c:\users\usuario\desktop\2nd-semester-utn-main\ejercicios-adicionales-1er-parcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695853146 c:\users\usuario\desktop\2nd-semester-utn-main\ejercicios-adicionales-1er-parcial\funciones.h
+	"listas.h"
+
+1695913770 c:\users\usuario\desktop\2nd-semester-utn-main\ejercicios-adicionales-1er-parcial\listas.h
+
+1695906612 source:c:\users\usuario\desktop\2nd-semester-utn-main\ejercicios-adicionales-1er-parcial\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
+
+1695853146 source:c:\users\usuario\desktop\2nd-semester-utn-main\ejercicios-adicionales-1er-parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
