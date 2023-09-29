@@ -7,6 +7,9 @@ void menu()
     nodoS*lista1=iniciarLista();
     nodoS*lista2=iniciarLista();
     nodoS*lista3=iniciarLista();
+    nodoD*listaDoble=iniciarLista();
+    stExamen*arr=NULL;
+    int validos=0;
     int opsw=0;
     char letra;
 
@@ -48,6 +51,15 @@ void menu()
         inciso(letra);
         break;
     case 4:
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        listaDoble=agregarOrdenadoDoble(listaDoble,crearNodoDoble(crearExamen()));
+        validos=contarAlumnosAsignaturaRecursivo(listaDoble,"progra");
+        arr=crearArregloDinamicoExamen(validos);
+
+        cargarArregloAsignaturaEspecifica(listaDoble,arr,validos,"progra");
+
+
+        mostrarArreglo(arr,validos);
         break;
     case 5:
         break;

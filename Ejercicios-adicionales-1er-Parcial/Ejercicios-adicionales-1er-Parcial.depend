@@ -68,3 +68,26 @@
 	<string.h>
 	"funciones.h"
 
+1695949875 source:g:\facu\c\2do cuatrimestre\ejercicios-adicionales-1er-parcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695853146 g:\facu\c\2do cuatrimestre\ejercicios-adicionales-1er-parcial\funciones.h
+	"listas.h"
+
+1695949845 g:\facu\c\2do cuatrimestre\ejercicios-adicionales-1er-parcial\listas.h
+
+1695853146 source:g:\facu\c\2do cuatrimestre\ejercicios-adicionales-1er-parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1695950124 source:g:\facu\c\2do cuatrimestre\ejercicios-adicionales-1er-parcial\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
+

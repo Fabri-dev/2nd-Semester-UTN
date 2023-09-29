@@ -397,8 +397,8 @@ int contarAlumnosAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[])
         {
             puts("encontre la asignatura");
 
-            listaD=ultimaOcurrenciaDniRecursivo(listaD,listaD->dato.dni);
             rta=1;
+            listaD=ultimaOcurrenciaDniRecursivo(listaD,listaD->dato.dni);
 
         }
         rta+=contarAlumnosAsignaturaRecursivo(listaD->siguiente,asignaturaBuscar);
@@ -419,13 +419,49 @@ nodoD*ultimaOcurrenciaDniRecursivo(nodoD*listaD, char dniBuscar[])
     if(listaD != NULL)
     {
         nodoD*proximo = listaD->siguiente;
-
-        if(strcmpi(proximo->dato.dni,listaD->dato.dni) == 0)
+        if(proximo != NULL)
         {
-            listaD=ultimaOcurrenciaDniRecursivo(listaD->siguiente,dniBuscar);
+            if(strcmpi(proximo->dato.dni,listaD->dato.dni) == 0)
+            {
+                listaD=ultimaOcurrenciaDniRecursivo(proximo,dniBuscar);
+            }
+
         }
 
     }
 
     return listaD;
+}
+
+stExamen*crearArregloDinamicoExamen(int t)
+{
+    stExamen*arr=(stExamen*)malloc(sizeof(stExamen)*t);
+    return arr;
+}
+
+
+void cargarArregloAsignaturaEspecifica(nodoD*listaD,stExamen arr[],int dim,char asignaturaBuscar[])
+{
+    int i=0;
+    while(i < dim)
+    {
+        if(strcmpi(listaD->dato.asignatura,asignaturaBuscar)==0)
+        {
+            arr[i]=listaD->dato;
+            i++;
+        }
+        listaD=ultimaOcurrenciaDniRecursivo(listaD,listaD->dato.dni);
+        listaD=listaD->siguiente;
+    }
+}
+
+
+void mostrarArreglo(stExamen arr[],int validos)
+{
+    puts("\nEsto es un arreglo");
+    for(int i=0; i <validos; i++)
+    {
+        mostrarExamen(arr[i]);
+    }
+
 }

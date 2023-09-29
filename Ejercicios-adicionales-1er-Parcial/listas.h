@@ -47,6 +47,13 @@ void mostrarExamenAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[]);
 int contarAlumnosAsignaturaRecursivo(nodoD*listaD,char asignaturaBuscar[]);
 nodoD*ultimaOcurrenciaDniRecursivo(nodoD*listaD, char dniBuscar[]);
 
+stExamen*crearArregloDinamicoExamen(int t);
+void cargarArregloAsignaturaEspecifica(nodoD*listaD,stExamen arr[],int dim,char asignaturaBuscar[]);
+
+
+
+void mostrarArreglo(stExamen arr[],int validos);
+
 
 
 
