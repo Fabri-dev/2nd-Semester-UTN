@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1696101402 source:g:\facu\c\2do cuatrimestre\tpadicional\listasdobles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasSimple.h"
+
+1696103114 source:g:\facu\c\2do cuatrimestre\tpadicional\listassimple.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasSimple.h"
+
+1696103114 g:\facu\c\2do cuatrimestre\tpadicional\listassimple.h
+
+1696105701 source:g:\facu\c\2do cuatrimestre\tpadicional\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasDobles.h"
+
+1696105701 g:\facu\c\2do cuatrimestre\tpadicional\listasdobles.h
+	"ListasSimple.h"
+
