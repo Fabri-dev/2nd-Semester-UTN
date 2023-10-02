@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1696202966 source:g:\facu\c\2do cuatrimestre\tpadicional-parte2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listaSimple.h"
+
+1696202842 g:\facu\c\2do cuatrimestre\tpadicional-parte2\listasimple.h
+
+1696203090 source:g:\facu\c\2do cuatrimestre\tpadicional-parte2\listasimple.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"listaSimple.h"
+
