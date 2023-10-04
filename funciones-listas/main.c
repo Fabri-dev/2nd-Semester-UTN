@@ -26,6 +26,7 @@ void mostrarListaInvertidoRecursivo(nodoS*listaS);
 void mostrarListaReferenciaRecursivo(nodoS**listaS);
 int contarNodosIterativo(nodoS*listaS);
 int contarNodosRecursivo(nodoS*listaS);
+nodoS*retornarUnNodoEspecifico(nodoS*listaS,int datoBuscar);
 
 int main()
 {
@@ -50,18 +51,20 @@ int main()
 //    nodoS*nuevoNodo;
 //    crearNodoRefe(&nuevoNodo,65);
 //    agregarAlPpioRefe(&listaSimple,nuevoNodo);
-//    mostrarListaNormal(listaSimple);
+    mostrarListaNormal(listaSimple);
 //    puts("\n\n\n");
 //    mostrarListaInvertidoRecursivo(listaSimple);
 //    puts("\n\n\n");
 //    mostrarListaRecursivo(listaSimple);
 //    puts("\n\n\n");
 //    mostrarListaReferenciaRecursivo(&listaSimple);
+//    dato=contarNodosIterativo(listaSimple);
+//    printf("Tienes: %i nodos",dato);
+//    dato=contarNodosRecursivo(listaSimple);
+//    printf("Tienes: %i nodos",dato);
 
-    dato=contarNodosIterativo(listaSimple);
-    printf("Tienes: %i nodos",dato);
-    dato=contarNodosRecursivo(listaSimple);
-    printf("Tienes: %i nodos",dato);
+
+
 
     return 0;
 }
@@ -149,6 +152,7 @@ void mostrarListaNormal(nodoS*lista)
     while(lista != NULL)
     {
         printf("Dato: %i \n",lista->dato);
+        printf("Puntero del nodo: %p\n",lista);
         puts("-----------------------------");
         lista=lista->siguiente;
     }
@@ -340,8 +344,27 @@ int contarNodosRecursivo(nodoS*listaS)
     return cont;
 }
 
-
-
+nodoS*retornarUnNodoEspecifico(nodoS*listaS,int datoBuscar)
+{
+    nodoS*aux;
+    int flag=0;
+    if(listaS != NULL)
+    {
+        while(listaS != NULL &&flag==0)
+        {
+            if(listaS->dato == datoBuscar)
+            {
+                flag=1;
+                aux=listaS;
+            }
+        }
+    }
+    else
+    {
+        puts("Lista vacia");
+    }
+    return aux;
+}
 
 
 
