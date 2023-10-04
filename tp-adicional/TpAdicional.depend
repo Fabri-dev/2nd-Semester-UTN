@@ -22,3 +22,26 @@
 1696105701 g:\facu\c\2do cuatrimestre\tpadicional\listasdobles.h
 	"ListasSimple.h"
 
+1696105777 source:g:\facu\c\2do cuatrimestre\tp-adicional\listasdobles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasSimple.h"
+
+1696103114 g:\facu\c\2do cuatrimestre\tp-adicional\listassimple.h
+
+1696103114 source:g:\facu\c\2do cuatrimestre\tp-adicional\listassimple.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasSimple.h"
+
+1696105701 source:g:\facu\c\2do cuatrimestre\tp-adicional\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasDobles.h"
+
+1696105701 g:\facu\c\2do cuatrimestre\tp-adicional\listasdobles.h
+	"ListasSimple.h"
+
