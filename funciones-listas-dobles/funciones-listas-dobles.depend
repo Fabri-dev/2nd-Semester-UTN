@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1696460786 source:g:\facu\c\2do cuatrimestre\funciones-listas-dobles\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
