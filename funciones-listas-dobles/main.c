@@ -219,3 +219,10 @@ void mostrarListaDobleRecursivo(nodoD*listaD)
         mostrarListaDobleRecursivo(listaD->siguiente);
     }
 }
+
+
+
+
+
+
+

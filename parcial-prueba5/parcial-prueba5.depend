@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1696472438 source:g:\facu\c\2do cuatrimestre\parcial-prueba5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<string.h>
+
+1696472438 g:\facu\c\2do cuatrimestre\parcial-prueba5\funciones.h
+
+1696472017 source:g:\facu\c\2do cuatrimestre\parcial-prueba5\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<string.h>
+
