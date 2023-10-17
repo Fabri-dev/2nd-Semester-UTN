@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1697324974 source:c:\users\fabri\desktop\tp-filas\filas.c
+
+1697323798 source:c:\users\fabri\desktop\tp-filas\listadoble.c
+
+1697503180 source:g:\facu\c\2do cuatrimestre\tp-filas\filas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"filas.h"
+
+1697504727 source:g:\facu\c\2do cuatrimestre\tp-filas\listadoble.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listaDoble.h"
+
+1697469004 source:g:\facu\c\2do cuatrimestre\tp-filas\listasimple.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listaSimple.h"
+
+1697430188 g:\facu\c\2do cuatrimestre\tp-filas\listasimple.h
+
+1697504728 source:g:\facu\c\2do cuatrimestre\tp-filas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"filas.h"
+	<time.h>
+
+1697505058 g:\facu\c\2do cuatrimestre\tp-filas\listadoble.h
+	"listaSimple.h"
+
+1697505058 g:\facu\c\2do cuatrimestre\tp-filas\filas.h
+	"listaDoble.h"
+
