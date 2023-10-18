@@ -4,8 +4,8 @@
 
 void inicFila(fila*caja, int nroFila);
 void mostrarUnaFila(fila caja);
-void inicMuchasFilas(fila*caja, int validos);
-void mostrarMuchasFilas(fila*caja, int validos);
+void inicMuchasFilas(fila*caja[], int validos);
+void mostrarMuchasFilas(fila caja[], int validos);
 
 
 
