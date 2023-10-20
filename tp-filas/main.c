@@ -20,11 +20,7 @@ int main()
     int contF1=0,contF3=0,contF4=0;
 
     nodoSimple*listaSimple=inicListaSimple();
-    nodoDoble*listaDoble1=inicListaDoble();
-    nodoDoble*listaDoble2=inicListaDoble();
-    nodoDoble*listaDoble3=inicListaDoble();
-    nodoDoble*listaDoble4=inicListaDoble();
-    nodoDoble*listaDoble5=inicListaDoble();
+
     fila cajas[5];
     stCliente aux;
 
@@ -72,7 +68,8 @@ int main()
             mostrarMuchasFilas(&cajas,validos);
             break;
         case 5:
-
+            ordenarClientesDeListaSimple(&listaSimple,cajas);
+            mostrarMuchasFilas(&cajas,validos);
             break;
         case 6:
 

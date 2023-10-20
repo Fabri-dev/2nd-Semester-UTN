@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1697762572 source:g:\facu\c\2do cuatrimestre\arboles-binarios\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1697762492 g:\facu\c\2do cuatrimestre\arboles-binarios\arboles.h
+
+1697762492 source:g:\facu\c\2do cuatrimestre\arboles-binarios\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+

@@ -70,23 +70,27 @@ void ordenarClientesDeListaSimple(nodoSimple**listaS,fila*cajas[])
                 }
                 else if(contF3 < contF1 && contF3 < contF4) // evaluo si es la f3
                 {
-                    cajas[2]->ultimo= ///me quede por aca, evauluar como agregar al final siguiente
+                    cajas[2]->ultimo->siguiente=(*listaS);
                 }
                 else // la f1 recibe si llegan a ser todos iguales o si la f1 es la menor
                 {
-
+                    cajas[0]->ultimo->siguiente=(*listaS);
                 }
 
                 break;
             case 2:
+                cajas[1]->ultimo->siguiente=(*listaS);
                 break;
             case 3:
+                cajas[2]->primero=agregarAlPpioDoble(cajas[2]->primero,crearNodoDoble((*listaS)->dato));
                 break;
             case 4:
+                cajas[4]->ultimo->siguiente=(*listaS);
                 break;
             default:
                 break;
             }
+            borrarPrimeroSimple(listaS);
         }
     }
     else
