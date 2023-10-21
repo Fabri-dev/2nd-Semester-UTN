@@ -8,15 +8,18 @@ int main()
     char op;
     int opsw;
     nodoArbol*raiz=inicArbol();
+    nodoS*listaSimple=inicLista();
+    stPersona aux;
     do
     {
         puts("1. Ingresar nodo a un arbol");
         puts("2. Mostrar preorder");
         puts("3. Mostrar inorder (menor a mayor)");
         puts("4. Mostrar postorde");
-        puts("5. ");
-        puts("6. ");
-        puts("7. ");
+        puts("5. Arbol to Lista");
+        puts("6. Mostrar Lista");
+        puts("7. Buscar persona x legajo en Arbol");
+        puts("8. ");
         puts("-------------------------------------");
         printf("Ingrese el ejercicio que desea: ");
         scanf("%i",&opsw);
@@ -36,10 +39,14 @@ int main()
             mostrarPostorder(raiz);
             break;
         case 5:
+            listaSimple=arbolToListaSimple(raiz,listaSimple);
+            mostrarListaSimple(listaSimple);
             break;
         case 6:
+            mostrarListaSimple(listaSimple);
             break;
         case 7:
+            aux=buscarUnaPersonaVerificado(raiz,preguntarDato());
             break;
         default:
             break;

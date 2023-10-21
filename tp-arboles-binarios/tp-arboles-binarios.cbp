@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arboles.h" />
+		<Unit filename="listaSimple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listaSimple.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

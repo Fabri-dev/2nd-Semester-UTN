@@ -9,6 +9,15 @@ nodoArbol*inicArbol()
     return NULL;
 }
 
+int preguntarDato()
+{
+    int dato=0;
+    printf("Ingrese un dato: ");
+    fflush(stdin);
+    scanf("%i",&dato);
+    return dato;
+}
+
 stPersona crearUnaPersona()
 {
     stPersona aux;
@@ -107,4 +116,75 @@ void mostrarPostorder(nodoArbol*raiz)
         mostrarInorder(raiz->derecha);
         mostrarPersona(raiz->dato);
     }
+}
+
+
+stPersona retornarUnaPersonaXLegajo(nodoArbol*raiz,int legajoBuscar) // primero es necesario verificar antes de buscar ya que sino nos retornaria una persona con datos basura
+{
+    stPersona aux;
+    if(raiz != NULL)
+    {
+        if(raiz->dato.legajo == legajoBuscar)
+        {
+            aux=raiz->dato;
+        }
+        else
+        {
+            if(legajoBuscar < raiz->dato.legajo)
+            {
+                aux= retornarUnaPersonaXLegajo(raiz->izquierda,legajoBuscar);
+            }
+            else
+            {
+                aux= retornarUnaPersonaXLegajo(raiz->derecha,legajoBuscar);
+            }
+        }
+    }
+    else
+    {
+        puts("Lista vacia");
+    }
+    return aux;
+}
+
+int verificarSiExistePersonaXLegajo(nodoArbol*raiz,int legajoBuscar) //aqui verificamos que exista la persona buscada por legajo, por mas que recorremos el arbol dos veces nos ahorramos de bugs
+{
+    int flag=0;
+    if(raiz != NULL)
+    {
+        if(raiz->dato.legajo == legajoBuscar)
+        {
+            flag=1;
+        }
+        else
+        {
+            if(legajoBuscar < raiz->dato.legajo)
+            {
+                flag=verificarSiExistePersonaXLegajo(raiz->izquierda,legajoBuscar);
+            }
+            else
+            {
+                flag=verificarSiExistePersonaXLegajo(raiz->derecha,legajoBuscar);
+            }
+        }
+    }
+
+    return flag;
+}
+
+
+
+stPersona buscarUnaPersonaVerificado(nodoArbol*raiz,int legajoBuscar) //aqui juntamos las dos funciones, y si existe la persona buscada por legajo, buscamos de nuevo y la retornamos, sino, no existe la persona
+{
+    stPersona aux;
+    if(verificarSiExistePersonaXLegajo(raiz,legajoBuscar))
+    {
+        aux=retornarUnaPersonaXLegajo(raiz,legajoBuscar);
+        mostrarPersona(aux);
+    }
+    else
+    {
+        puts("El legajo buscado no existe");
+    }
+    return aux;
 }
