@@ -44,6 +44,7 @@ int main()
     puts("6. Contar nodos grado 1 (osea que solo tengan un solo nodo)");
     puts("7. Buscar un dato");
     puts("8. Buscar un dato pro");
+    puts("9. Buscar numero menor");
     puts("----------------------------------------------------");
     printf("Que desea hacer?: ");
     scanf("%i",&opsw);
@@ -75,6 +76,10 @@ int main()
         break;
     case 8:
         buscarDatoEnArbolPro(raiz,preguntarDato()) ? printf("Dato encontrado ! \n"):printf("El dato que usted busco no existe \n");
+        break;
+    case 9:
+        dato=buscarMenor(raiz);
+        printf("El numero menor es: %i \n",dato);
         break;
     default:
         break;

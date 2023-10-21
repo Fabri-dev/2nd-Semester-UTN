@@ -160,3 +160,19 @@ int buscarDatoEnArbolPro(nodoArbol*raiz,int datoBuscar)
 {
     return raiz ? ( (raiz->dato == datoBuscar)? 1 : (datoBuscar < raiz->dato) ? buscarDatoEnArbolPro(raiz->izquierda,datoBuscar): buscarDatoEnArbolPro(raiz->derecha,datoBuscar) ): 0;
 }
+
+
+int buscarMenor(nodoArbol*raiz)
+{
+    int num=0;
+    if(raiz->izquierda != NULL)
+    {
+        num=buscarMenor(raiz->izquierda);
+    }
+    else
+    {
+        num=raiz->dato;
+    }
+
+    return num;
+}

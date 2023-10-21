@@ -16,10 +16,21 @@ typedef struct
     struct nodoArbol*derecha;
 }nodoArbol;
 
+typedef struct
+{
+    stPersona dato;
+    struct nodoS*siguiente;
 
-nodoArbol*inicLista();
+}nodoS;
+
+nodoArbol*inicArbol();
 stPersona crearUnaPersona();
+void mostrarPersona(stPersona aux);
 nodoArbol*crearNodoArbol(stPersona aux);
-
+nodoArbol*ingresarXLegajo(nodoArbol*raiz,nodoArbol*nuevoNodo);
+nodoArbol* ingresarMuchosNodosXLegajo(nodoArbol*raiz);
+void mostrarPreorder(nodoArbol*raiz);
+void mostrarInorder(nodoArbol*raiz);
+void mostrarPostorder(nodoArbol*raiz);
 
 #endif // ARBOLES_H_INCLUDED

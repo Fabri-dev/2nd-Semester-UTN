@@ -19,6 +19,8 @@ void mostrarPostOrder(nodoArbol*raiz);
 int contarHojas(nodoArbol*raiz);
 int contarNodosGradoUno(nodoArbol*raiz);
 int buscarDatoEnArbol(nodoArbol*raiz,int datoBuscar);
+int buscarDatoEnArbolPro(nodoArbol*raiz,int datoBuscar);
+int buscarMenor(nodoArbol*raiz);
 
 
 
