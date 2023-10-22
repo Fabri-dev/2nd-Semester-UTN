@@ -25,7 +25,7 @@ typedef struct
 
 nodoArbol*inicArbol();
 stPersona crearUnaPersona();
-int preguntarDato();
+int preguntarDatoEntero();
 void mostrarPersona(stPersona aux);
 nodoArbol*crearNodoArbol(stPersona aux);
 nodoArbol*ingresarXLegajo(nodoArbol*raiz,nodoArbol*nuevoNodo);
@@ -35,5 +35,14 @@ void mostrarInorder(nodoArbol*raiz);
 void mostrarPostorder(nodoArbol*raiz);
 stPersona retornarUnaPersonaXLegajo(nodoArbol*raiz,int legajoBuscar);
 int verificarSiExistePersonaXLegajo(nodoArbol*raiz,int legajoBuscar);
-stPersona buscarUnaPersonaVerificado(nodoArbol*raiz,int legajoBuscar);
+stPersona buscarUnaPersonaXLegajoVerificado(nodoArbol*raiz,int legajoBuscar);
+int verificarSiExistePersonaXNombre(nodoArbol* raiz,char nombreBuscar[]);
+stPersona retornarUnaPersonaXNombre(nodoArbol*raiz,char nombreBuscar[]);
+stPersona buscarUnaPersonaXNombreVerificado(nodoArbol*raiz, char nombreBuscar[]);
+int calcularAlturaArbol(nodoArbol*raiz);
+int contarNodos(nodoArbol*raiz);
+int contarHojas(nodoArbol*raiz);
+
+
+
 #endif // ARBOLES_H_INCLUDED

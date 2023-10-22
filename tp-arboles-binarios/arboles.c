@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arboles.h"
+#include "listaSimple.h"
 
 
 nodoArbol*inicArbol()
@@ -9,7 +9,7 @@ nodoArbol*inicArbol()
     return NULL;
 }
 
-int preguntarDato()
+int preguntarDatoEntero()
 {
     int dato=0;
     printf("Ingrese un dato: ");
@@ -75,7 +75,8 @@ nodoArbol* ingresarMuchosNodosXLegajo(nodoArbol*raiz)
         printf("Desea seguir cargando nodos? s/n: ");
         fflush(stdin);
         scanf("%c",&op);
-    }while(op=='s' || op=='S');
+    }
+    while(op=='s' || op=='S');
     return raiz;
 }
 
@@ -100,7 +101,7 @@ void mostrarInorder(nodoArbol*raiz)
 
 void mostrarPreorder(nodoArbol*raiz)
 {
-        if(raiz != NULL)
+    if(raiz != NULL)
     {
         mostrarPersona(raiz->dato);
         mostrarInorder(raiz->izquierda);
@@ -110,7 +111,7 @@ void mostrarPreorder(nodoArbol*raiz)
 
 void mostrarPostorder(nodoArbol*raiz)
 {
-        if(raiz != NULL)
+    if(raiz != NULL)
     {
         mostrarInorder(raiz->izquierda);
         mostrarInorder(raiz->derecha);
@@ -174,7 +175,7 @@ int verificarSiExistePersonaXLegajo(nodoArbol*raiz,int legajoBuscar) //aqui veri
 
 
 
-stPersona buscarUnaPersonaVerificado(nodoArbol*raiz,int legajoBuscar) //aqui juntamos las dos funciones, y si existe la persona buscada por legajo, buscamos de nuevo y la retornamos, sino, no existe la persona
+stPersona buscarUnaPersonaXLegajoVerificado(nodoArbol*raiz,int legajoBuscar) //aqui juntamos las dos funciones, y si existe la persona buscada por legajo, buscamos de nuevo y la retornamos, sino, no existe la persona
 {
     stPersona aux;
     if(verificarSiExistePersonaXLegajo(raiz,legajoBuscar))
@@ -187,4 +188,112 @@ stPersona buscarUnaPersonaVerificado(nodoArbol*raiz,int legajoBuscar) //aqui jun
         puts("El legajo buscado no existe");
     }
     return aux;
+}
+
+int verificarSiExistePersonaXNombre(nodoArbol* raiz,char nombreBuscar[])
+{
+    int flag=0;
+    if(raiz != NULL)
+    {
+        if(strcmpi(raiz->dato.nombre,nombreBuscar)==0)
+        {
+            flag=1;
+        }
+        else
+        {
+            flag=verificarSiExistePersonaXNombre(raiz->izquierda,nombreBuscar);
+            flag=verificarSiExistePersonaXNombre(raiz->derecha,nombreBuscar);
+        }
+    }
+    return flag;
+}
+
+
+stPersona retornarUnaPersonaXNombre(nodoArbol*raiz,char nombreBuscar[])
+{
+    stPersona aux;
+    if(raiz != NULL)
+    {
+        if(strcmpi(raiz->dato.nombre,nombreBuscar)==0)
+        {
+            aux=raiz->dato;
+        }
+        else
+        {
+            aux= retornarUnaPersonaXNombre(raiz->izquierda,nombreBuscar);
+            aux= retornarUnaPersonaXNombre(raiz->derecha,nombreBuscar);
+        }
+    }
+    return aux;
+}
+
+stPersona buscarUnaPersonaXNombreVerificado(nodoArbol*raiz, char nombreBuscar[])
+{
+    stPersona aux;
+    if(verificarSiExistePersonaXNombre(raiz,nombreBuscar))
+    {
+        aux=retornarUnaPersonaXNombre(raiz,nombreBuscar);
+        mostrarPersona(aux);
+    }
+    else
+    {
+        puts("Nombre buscado no existe");
+    }
+}
+
+
+
+int calcularAlturaArbol(nodoArbol*raiz)
+{
+    int rta = 0;
+
+    if (raiz != NULL)
+    {
+
+
+        int rtaI = calcularAltura(raiz->izq);
+        int rtaD = calcularAltura(raiz->der);
+
+        if(rtaI > rtaD)
+        {
+
+            rta = rtaI + 1;
+        }
+        else
+        {
+            rta = rtaD + 1;
+        }
+
+    }
+
+    return rta;
+
+}
+
+int contarNodos(nodoArbol*raiz)
+{
+    int cont=0;
+
+    if(raiz != NULL)
+    {
+        cont++;
+        cont+= contarNodos(raiz->izquierda);
+        cont+= contarNodos(raiz->derecha);
+    }
+    return cont;
+}
+
+int contarHojas(nodoArbol*raiz)
+{
+    int cont=0;
+    if(raiz->izquierda == NULL && raiz->derecha == NULL)
+    {
+        cont++;
+    }
+    else
+    {
+        cont+=contarHojas(raiz->izquierda);
+        cont+=contarHojas(raiz->derecha);
+    }
+    return cont;
 }

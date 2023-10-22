@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arboles.h"
+#include "listaSimple.h"
 
 int main()
 {
     char op;
-    int opsw;
+    int opsw,dato=0;
     nodoArbol*raiz=inicArbol();
     nodoS*listaSimple=inicLista();
     stPersona aux;
+    char*auxStr;
     do
     {
         puts("1. Ingresar nodo a un arbol");
@@ -19,7 +20,9 @@ int main()
         puts("5. Arbol to Lista");
         puts("6. Mostrar Lista");
         puts("7. Buscar persona x legajo en Arbol");
-        puts("8. ");
+        puts("8. Buscar persona x nombre en Arbol");
+        puts("9. Calcular niveles de arbol");
+        puts("10. ");
         puts("-------------------------------------");
         printf("Ingrese el ejercicio que desea: ");
         scanf("%i",&opsw);
@@ -46,7 +49,19 @@ int main()
             mostrarListaSimple(listaSimple);
             break;
         case 7:
-            aux=buscarUnaPersonaVerificado(raiz,preguntarDato());
+            aux=buscarUnaPersonaXLegajoVerificado(raiz,preguntarDatoEntero());
+            break;
+        case 8:
+            printf("Ingrese el nombre que quiere buscar(15 caracteres max.): ");
+            fflush(stdin);
+            scanf("%s",&auxStr);
+            aux=buscarUnaPersonaXNombreVerificado(raiz,auxStr);
+            break;
+        case 9:
+            dato=calcularAlturaArbol(raiz,0);
+            printf("El numero de niveles que tiene el arbol es: %i \n",dato);
+            break;
+        case 10:
             break;
         default:
             break;
