@@ -239,34 +239,27 @@ stPersona buscarUnaPersonaXNombreVerificado(nodoArbol*raiz, char nombreBuscar[])
     {
         puts("Nombre buscado no existe");
     }
+    return aux;
 }
 
 
 
 int calcularAlturaArbol(nodoArbol*raiz)
 {
-    int rta = 0;
+    int rta=0;
+    int rtaIzq=calcularAlturaArbol(raiz->izquierda);
+    int rtaDer=calcularAlturaArbol(raiz->derecha);
 
-    if (raiz != NULL)
+    if(rtaIzq > rtaDer)
     {
-
-
-        int rtaI = calcularAltura(raiz->izq);
-        int rtaD = calcularAltura(raiz->der);
-
-        if(rtaI > rtaD)
-        {
-
-            rta = rtaI + 1;
-        }
-        else
-        {
-            rta = rtaD + 1;
-        }
-
+        rta=rtaIzq;
+    }
+    else
+    {
+        rta=rtaDer;
     }
 
-    return rta;
+    return rta+1;
 
 }
 
@@ -297,3 +290,86 @@ int contarHojas(nodoArbol*raiz)
     }
     return cont;
 }
+
+int esHoja(nodoArbol*raiz)
+{
+    return (raiz && !raiz->izquierda && raiz->derecha);
+}
+
+int esNodoNivelUno(nodoArbol*raiz)
+{
+    return (raiz && ((raiz->izquierda && !raiz->derecha) || (!raiz->izquierda && raiz->derecha)));
+}
+
+int esNodoLleno(nodoArbol*raiz)
+{
+    return (raiz && raiz->izquierda && raiz->derecha);
+}
+
+nodoArbol*buscarNodoMayorDeLaIzquierda(nodoArbol*raiz)
+{
+    while(raiz->derecha != NULL)
+    {
+        raiz=raiz->derecha;
+    }
+    return raiz;
+}
+int arbolVacio(nodoArbol*raiz)
+{
+    if(raiz != NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        puts("Arbol Vacio");
+        return 1;
+    }
+}
+nodoArbol*borrarUnNodo(nodoArbol*raiz,int legajoBorrar)
+{
+    if(!arbolVacio(raiz))
+    {
+        if(raiz->dato.legajo == legajoBorrar)
+        {
+            nodoArbol*aux=raiz;
+            if(esNodoLleno(raiz))
+            {
+                raiz->dato=buscarNodoMayorDeLaIzquierda(raiz->izquierda)->dato;
+                raiz->izquierda=borrarUnNodo(raiz->izquierda,raiz->dato.legajo);
+            }
+            else
+            {
+                if(esHoja(raiz))
+                {
+                    raiz=NULL;
+                }
+                else
+                {
+                    if(raiz->izquierda != NULL)
+                    {
+                        raiz= raiz->izquierda;
+                    }
+                    else
+                    {
+                        raiz=raiz->derecha;
+                    }
+                }
+            }
+                free(aux);
+        }
+        else if(legajoBorrar < raiz->dato.legajo)
+        {
+            raiz->izquierda=borrarUnNodo(raiz->izquierda,legajoBorrar);
+        }
+        else
+        {
+            raiz->derecha=borrarUnNodo(raiz->derecha,legajoBorrar);
+        }
+        puts("Nodo Borrado con exito");
+    }
+
+
+    return raiz;
+}
+

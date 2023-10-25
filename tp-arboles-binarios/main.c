@@ -22,8 +22,10 @@ int main()
         puts("7. Buscar persona x legajo en Arbol");
         puts("8. Buscar persona x nombre en Arbol");
         puts("9. Calcular niveles de arbol");
-        puts("10. ");
-        puts("-------------------------------------");
+        puts("10. Contar cantidad de nodos del arbol");
+        puts("11. Contar cantidad de hojas del arbol");
+        puts("12. Borrar un nodo por legajo");
+        puts("----------------------------------------");
         printf("Ingrese el ejercicio que desea: ");
         scanf("%i",&opsw);
 
@@ -58,10 +60,20 @@ int main()
             aux=buscarUnaPersonaXNombreVerificado(raiz,auxStr);
             break;
         case 9:
-            dato=calcularAlturaArbol(raiz,0);
+            dato=calcularAlturaArbol(raiz);
             printf("El numero de niveles que tiene el arbol es: %i \n",dato);
             break;
         case 10:
+            dato=contarNodos(raiz);
+            printf("La cantidad de nodos que tiene el arbol es: %i",dato);
+            break;
+        case 11:
+            dato=contarHojas(raiz);
+            printf("La cantidad de hojas que tiene el arbol es: %i",dato);
+            break;
+        case 12:
+            raiz=borrarUnNodo(raiz,preguntarDatoEntero());
+            mostrarInorder(raiz);
             break;
         default:
             break;

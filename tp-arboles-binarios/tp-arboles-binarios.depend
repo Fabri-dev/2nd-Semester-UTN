@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1698007199 source:g:\facu\c\2do cuatrimestre\tp-arboles-binarios\main.c
+1698258721 source:g:\facu\c\2do cuatrimestre\tp-arboles-binarios\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"listaSimple.h"
 
-1698015606 g:\facu\c\2do cuatrimestre\tp-arboles-binarios\arboles.h
+1698258861 g:\facu\c\2do cuatrimestre\tp-arboles-binarios\arboles.h
 
-1698007087 source:g:\facu\c\2do cuatrimestre\tp-arboles-binarios\arboles.c
+1698258591 source:g:\facu\c\2do cuatrimestre\tp-arboles-binarios\arboles.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -42,6 +42,12 @@ stPersona buscarUnaPersonaXNombreVerificado(nodoArbol*raiz, char nombreBuscar[])
 int calcularAlturaArbol(nodoArbol*raiz);
 int contarNodos(nodoArbol*raiz);
 int contarHojas(nodoArbol*raiz);
+int esHoja(nodoArbol*raiz);
+nodoArbol*borrarUnNodo(nodoArbol*raiz,int legajoBorrar);
+int esNodoNivelUno(nodoArbol*raiz);
+int esNodoLleno(nodoArbol*raiz);
+nodoArbol*buscarNodoMayorDeLaIzquierda(nodoArbol*raiz);
+int arbolVacio(nodoArbol*raiz);
 
 
 
