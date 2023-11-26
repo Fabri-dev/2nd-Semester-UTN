@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1700083130 source:g:\facu\c\2do cuatrimestre\simulacro-2do-parcial-1\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
+1700101326 source:g:\facu\c\2do cuatrimestre\simulacro-2do-parcial-1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+
+1700101269 source:g:\facu\c\2do cuatrimestre\simulacro-2do-parcial-1\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pelicula.h"
+
+1700083193 g:\facu\c\2do cuatrimestre\simulacro-2do-parcial-1\arbol.h
+
+1700100741 g:\facu\c\2do cuatrimestre\simulacro-2do-parcial-1\pelicula.h
+	"arbol.h"
+
